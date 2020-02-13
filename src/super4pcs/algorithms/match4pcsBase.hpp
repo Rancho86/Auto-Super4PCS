@@ -154,32 +154,32 @@ void Match4PCSBase::init(
 	//float KK[P.size()][3] = P[.pos();
 	//linear_search(Pmat, Pmat, indices, dists, 8);
 	//float m0[10][3] = { { 1,2,3},{6, 5, 4},	{7, 8, 9 },{10, 11, 12},{13, 14, 15},{16, 17, 18},{19, 20, 21},{22, 23, 24},{25, 26, 27},{28,29,30}};
-	int m = sizeof(kkk[0]) / sizeof(float);
-	int n = (sizeof(kkk) / sizeof(float)) / (sizeof(kkk[0]) / sizeof(float));
-	//int mm = sizeof(kkkk[0]) / sizeof(int);
-	//int nn = (sizeof(kkkk) / sizeof(int)) / (sizeof(kkkk[0]) / sizeof(int));
-	Log<LogLevel::Verbose>("kkk长度: ", m,",kkk的宽度：",n);
-	Log<LogLevel::Verbose>("kkk规格: ", sizeof(kkk));
-	Log<LogLevel::Verbose>("pp: ", pp);
+	//int m = sizeof(kkk[0]) / sizeof(float);
+	//int n = (sizeof(kkk) / sizeof(float)) / (sizeof(kkk[0]) / sizeof(float));
+	////int mm = sizeof(kkkk[0]) / sizeof(int);
+	////int nn = (sizeof(kkkk) / sizeof(int)) / (sizeof(kkkk[0]) / sizeof(int));
+	//Log<LogLevel::Verbose>("kkk长度: ", m,",kkk的宽度：",n);
+	//Log<LogLevel::Verbose>("kkk规格: ", sizeof(kkk));
+	//Log<LogLevel::Verbose>("pp: ", pp);
 
-	Log<LogLevel::Verbose>("kkk[0,0]: ", kkk[0][0]);
-	Log<LogLevel::Verbose>("P[i].pos()[0]: ", P[0].pos()[0]);
-	Log<LogLevel::Verbose>("kkk[0,1]: ", kkk[0][1]);
-	Log<LogLevel::Verbose>("P[0].pos()[1]: ", P[0].pos()[1]);
-	Log<LogLevel::Verbose>("kkk[0,2]: ", kkk[0][2]);
-	Log<LogLevel::Verbose>("P[0].pos()[2]: ", P[0].pos()[2]);
-	Log<LogLevel::Verbose>("kkk[1,0]: ", kkk[1][0]);
-	Log<LogLevel::Verbose>("P[1].pos()[0]: ", P[1].pos()[0]);
-	Log<LogLevel::Verbose>("kkk[1,1]: ", kkk[1][1]);
-	Log<LogLevel::Verbose>("P[1].pos()[1]: ", P[1].pos()[1]);
-	Log<LogLevel::Verbose>("kkk[1,2]: ", kkk[1][2]);
-	Log<LogLevel::Verbose>("P[1].pos()[2]: ", P[1].pos()[2]);
-	Log<LogLevel::Verbose>("kkk[2,0]: ", kkk[2][0]);
-	Log<LogLevel::Verbose>("P[2].pos()[0]: ", P[2].pos()[0]);
-	Log<LogLevel::Verbose>("kkk[2,1]: ", kkk[2][1]);
-	Log<LogLevel::Verbose>("P[2].pos()[1]: ", P[2].pos()[1]);
-	Log<LogLevel::Verbose>("kkk[2,2]: ", kkk[2][2]);
-	Log<LogLevel::Verbose>("P[2].pos()[2]: ", P[2].pos()[2]);
+	//Log<LogLevel::Verbose>("kkk[0,0]: ", kkk[0][0]);
+	//Log<LogLevel::Verbose>("P[i].pos()[0]: ", P[0].pos()[0]);
+	//Log<LogLevel::Verbose>("kkk[0,1]: ", kkk[0][1]);
+	//Log<LogLevel::Verbose>("P[0].pos()[1]: ", P[0].pos()[1]);
+	//Log<LogLevel::Verbose>("kkk[0,2]: ", kkk[0][2]);
+	//Log<LogLevel::Verbose>("P[0].pos()[2]: ", P[0].pos()[2]);
+	//Log<LogLevel::Verbose>("kkk[1,0]: ", kkk[1][0]);
+	//Log<LogLevel::Verbose>("P[1].pos()[0]: ", P[1].pos()[0]);
+	//Log<LogLevel::Verbose>("kkk[1,1]: ", kkk[1][1]);
+	//Log<LogLevel::Verbose>("P[1].pos()[1]: ", P[1].pos()[1]);
+	//Log<LogLevel::Verbose>("kkk[1,2]: ", kkk[1][2]);
+	//Log<LogLevel::Verbose>("P[1].pos()[2]: ", P[1].pos()[2]);
+	//Log<LogLevel::Verbose>("kkk[2,0]: ", kkk[2][0]);
+	//Log<LogLevel::Verbose>("P[2].pos()[0]: ", P[2].pos()[0]);
+	//Log<LogLevel::Verbose>("kkk[2,1]: ", kkk[2][1]);
+	//Log<LogLevel::Verbose>("P[2].pos()[1]: ", P[2].pos()[1]);
+	//Log<LogLevel::Verbose>("kkk[2,2]: ", kkk[2][2]);
+	//Log<LogLevel::Verbose>("P[2].pos()[2]: ", P[2].pos()[2]);
 	//float aaa[100000][3];
 	//static float aa[80000*3];
 	//static float * aa = new float[80000 * 3];
@@ -192,14 +192,14 @@ void Match4PCSBase::init(
 		//	aaa[i][j] = aa;
 		}
 	}
-	Log<LogLevel::Verbose>("aa[0]: ", aa[0]);
-	Log<LogLevel::Verbose>("aa[1]: ", aa[1]);
-	Log<LogLevel::Verbose>("aa[2]: ", aa[2]);
+	//Log<LogLevel::Verbose>("aa[0]: ", aa[0]);
+	//Log<LogLevel::Verbose>("aa[1]: ", aa[1]);
+	//Log<LogLevel::Verbose>("aa[2]: ", aa[2]);
 		cv::Mat mK = cv::Mat(5000,3, CV_32FC1, aa);
 
-	    Log<LogLevel::Verbose>("P.size(): ", P.size());
-	    Log<LogLevel::Verbose>("normals1.size(): ", normals1.size());
-		Log<LogLevel::Verbose>("mK.size(): ", mK.size());
+	 //   Log<LogLevel::Verbose>("P.size(): ", P.size());
+	 //   Log<LogLevel::Verbose>("normals1.size(): ", normals1.size());
+		//Log<LogLevel::Verbose>("mK.size(): ", mK.size());
 
 		clock_t ttt1 = clock();
 		flann::Index flannIndex(mK, flann::KDTreeIndexParams());
@@ -217,17 +217,17 @@ void Match4PCSBase::init(
 		Log<LogLevel::Verbose>("knn时间: ", (tt2 - tt1) / CLOCKS_PER_SEC);
 		Log<LogLevel::Verbose>("knn+索引时间: ", (tt2 - ttt1) / CLOCKS_PER_SEC);
 
-		Log<LogLevel::Verbose>("indices第一行: ", indices.row(1));
-		Log<LogLevel::Verbose>("dists第一行: ", dists.row(1));
-		Log<LogLevel::Verbose>("indices第二行: ", indices.row(2));
-		Log<LogLevel::Verbose>("dists第二行: ", dists.row(2));
-		
-		//cout << "Finish linerSearch: " << (tt2 - tt1) / CLOCKS_PER_SEC << "s" << endl;
-		
-		//Log<LogLevel::Verbose>("point.size: ", point.size());
-		Log<LogLevel::Verbose>("indices.size: ", indices.size());
-		Log<LogLevel::Verbose>("dists.size: ", dists.size());
-		//cout << indices << endl;
+		//Log<LogLevel::Verbose>("indices第一行: ", indices.row(1));
+		//Log<LogLevel::Verbose>("dists第一行: ", dists.row(1));
+		//Log<LogLevel::Verbose>("indices第二行: ", indices.row(2));
+		//Log<LogLevel::Verbose>("dists第二行: ", dists.row(2));
+		//
+		////cout << "Finish linerSearch: " << (tt2 - tt1) / CLOCKS_PER_SEC << "s" << endl;
+		//
+		////Log<LogLevel::Verbose>("point.size: ", point.size());
+		//Log<LogLevel::Verbose>("indices.size: ", indices.size());
+		//Log<LogLevel::Verbose>("dists.size: ", dists.size());
+		////cout << indices << endl;
 		
     sampled_P_3D_.clear();
     sampled_Q_3D_.clear();
